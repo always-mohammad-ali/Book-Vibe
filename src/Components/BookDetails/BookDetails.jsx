@@ -45,6 +45,11 @@ const BookDetails = () => {
                         <p className='font-bold'>{rating}</p>
                     </div>
                 </div>
+                
+                <div className='mt-5'>
+                    <button className="btn btn-outline btn-success mr-5">Mark as Read</button>
+                    <button className="btn btn-outline btn-success">Add to Read List</button>
+                </div>
             </div>
             
         </div>
