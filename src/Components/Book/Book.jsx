@@ -13,8 +13,8 @@ const Book = ({ book }) => {
           </figure>
 
           <div className="mt-5">
-            {tags.map((tag) => (
-              <button className="btn btn-outline btn-success ml-3">
+            {tags.map((tag, index) => (
+              <button key={index} className="btn btn-outline btn-success ml-3">
                 {tag}
               </button>
             ))}
