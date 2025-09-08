@@ -6,7 +6,7 @@ const Banner = () => {
             <div className='text-black ml-20'>
                 <h1 className='text-6xl font-semibold'>Books to Freshen Up</h1>
                 <h1 className='text-6xl font-semibold my-5'>Your Bookshelf</h1>
-                <button className='bg-[#23BE0A] px-4 py-2 font-semibold text-xl rounded-xl'>View The Lists</button>
+                <button className='bg-[#51e839] px-4 py-2 font-semibold text-xl rounded-xl'>View The Lists</button>
             </div>
 
             <div className=''>
