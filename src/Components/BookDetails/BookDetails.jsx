@@ -1,6 +1,6 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
-import { addToStoredReadList } from '../../Utilities/addToDB';
+
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { addToStoredReadList, addToWishReadList } from '../../Utilities/addToDB';
 
 const BookDetails = () => {
     const {bookId} = useParams();
@@ -14,6 +14,15 @@ const BookDetails = () => {
 
     const handleMarkAsRead = (id) =>{
         addToStoredReadList(id)
+    }
+
+    const handleReadList = (id) =>{
+        addToWishReadList(id)
+    }
+
+    const navigate = useNavigate();
+    const handleGoBack = () =>{
+        navigate(-1)
     }
 
     return (
@@ -53,7 +62,8 @@ const BookDetails = () => {
 
                 <div className='mt-5'>
                     <button onClick={() => handleMarkAsRead(bookId)} className="btn btn-outline btn-success mr-5">Mark as Read</button>
-                    <button className="btn btn-outline btn-success">Add to Read List</button>
+                    <button onClick={() => handleReadList(bookId)} className="btn btn-outline btn-success">Add to Read List</button>
+                    <button onClick={handleGoBack} className='btn btn-ghost ml-5 btn-outline'>Go back</button>
                 </div>
             </div>
             

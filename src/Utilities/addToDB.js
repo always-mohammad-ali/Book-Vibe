@@ -14,7 +14,7 @@ const addToStoredReadList = (id) =>{
     const storedList = getStoredReadList();
 
     if(storedList.includes(id)){
-        console.log('already exists in the read list', id)
+        console.log('already exists in the mark as read list', id)
     }
     else{
         storedList.push(id);
@@ -23,4 +23,31 @@ const addToStoredReadList = (id) =>{
     }
 }
 
-export {addToStoredReadList}
+const getAlreadyReadList = () =>{
+      
+    const alreadyReadListStr = localStorage.getItem('wish-read-list');
+
+    if(alreadyReadListStr){
+        const storedReadList = JSON.parse(alreadyReadListStr);
+        return storedReadList;
+    }
+    else{
+        return [];
+    }
+}
+
+const addToWishReadList = (id) =>{
+    
+    const storedReadList = getAlreadyReadList();
+
+    if(storedReadList.includes(id)){
+        console.log('it has already existed in the wish read list', id)
+    }
+    else{
+        storedReadList.push(id);
+        const storedReadListStr = JSON.stringify(storedReadList)
+        localStorage.setItem('wish-read-list',storedReadListStr)
+    }
+}
+
+export {addToStoredReadList, addToWishReadList}
