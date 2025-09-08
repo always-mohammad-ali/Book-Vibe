@@ -37,7 +37,7 @@ const BookDetails = () => {
                 <p className='text-gray-500 mb-5 text-xs'><span className='text-black text-lg font-bold'>Review:</span> {review}</p>
                 <p className='mb-6'><span className='font-bold mr-7'>Tag </span>
                     {
-                        tags.map(tag => <button className='border-2 border-green-200 mr-4 px-3 py-1'>{tag}</button>)
+                        tags.map(tag => <button key={tag} className='border-2 border-green-200 mr-4 px-3 py-1'>{tag}</button>)
                     }
                 </p>
 
